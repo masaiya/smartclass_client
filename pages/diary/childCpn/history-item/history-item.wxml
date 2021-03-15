@@ -1,0 +1,11 @@
+<!--pages/history/childCpn/history-item.wxml-->
+<view class="layout">
+  <view class="dist-content">
+    <view class="content-title">文本内容</view>
+    <text class="word content">{{data.word}}</text>
+  </view>
+  <view class="dist-time">
+    <text>记录时间</text>
+    <text class="word">{{data.date}}</text>
+  </view>
+</view>

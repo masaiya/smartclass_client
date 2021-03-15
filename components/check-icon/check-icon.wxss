@@ -1,0 +1,7 @@
+.check-icon {
+  border: 4rpx solid #aaa;
+  border-radius: 44rpx;
+}
+.check {
+  border-color: #ff5777;
+}

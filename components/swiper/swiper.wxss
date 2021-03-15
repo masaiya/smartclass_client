@@ -1,0 +1,7 @@
+/* pages/home/childCpns/swiper.wxss */
+.swiper-item-image {
+  width: 100%;
+}
+.swiper {
+  margin-bottom: 40rpx;
+}

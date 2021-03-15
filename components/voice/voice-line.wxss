@@ -1,0 +1,21 @@
+/* components/voice/voice-line.wxss */
+.layout {
+
+}
+.container {
+  border-radius: 10rpx;
+  height: 50rpx;
+  border: 1px solid #000;
+  display: inline-block;
+}
+.logo {
+  width: 36rpx;
+  height: 50rpx;
+}
+.image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.duration {
+  display: inline-block;
+}

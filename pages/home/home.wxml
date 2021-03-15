@@ -1,0 +1,29 @@
+<!--pages/home.wxml-->
+<view class="home" >
+  <scroll-view class='home-content' scroll-y>
+    <view wx:if="{{isShowLogin}}" class="login-container">
+      <view class='headView'>
+        <view class='titleText'>申请获取以下权限</view>
+        <view class='contentText'>获得你的公开信息(昵称,头像,手机等)</view>
+        <button class='authBtn' type='primary' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>授权登录</button>
+      </view>
+    </view>
+    <w-swiper list="{{topImages}}" class="swiper" swiperheight="swiperheight" />
+    <view class='menu'>
+      <view class="menu-item" bind:tap="handleMenuTap" data-menuName='{{item.name}}'  wx:key="index"  wx:for="{{menuImages}}">
+        <view class="image-container">
+          <image src="{{item.image || item}}" class="item-images" mode='aspectFill'></image>
+        </view>
+        <text class="name">{{item.name}}</text>
+      </view>
+    </view>
+    <view class='menu'>
+      <view class="menu-item" bind:tap="handleMenuTap" data-menuName='{{item.name}}'  wx:key="index"  wx:for="{{menuImages1}}">
+        <view class="image-container">
+          <image src="{{item.image || item}}" class="item-images" mode='aspectFill'></image>
+        </view>
+        <text class="name">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

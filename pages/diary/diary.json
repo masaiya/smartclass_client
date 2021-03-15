@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "history-item": "./childCpn/history-item/history-item"
+  },
+  "navigationBarTitleText": "日记本"
+}

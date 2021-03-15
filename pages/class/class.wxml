@@ -1,0 +1,5 @@
+<!--pages/class/class.wxml-->
+<view>
+  <button type="primary" bind:tap="beginRecoder" >开始录音</button>
+  <button type="primary" bind:tap="colseRecoder" >停止录音</button>
+</view>

@@ -1,0 +1,51 @@
+/* pages/profileInfo/profileInfo.wxss */
+.button {
+  width: 350rpx !important;
+  position: absolute;
+  bottom: 40rpx;
+  /* height: 60rpx; */
+  left: 200rpx;
+}
+.button2 {
+  bottom: 100rpx;
+  left: 200rpx;
+}
+.layout {
+  position: relative;
+  height: 100vh;
+  padding: 0 4%;
+}
+.weui-input {
+  width: 400rpx;
+  height: 84rpx;
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  padding: 0 10rpx;
+}
+.info-item {
+  border-bottom: 1px solid #eee;
+  height: 84rpx;
+  position: relative;
+}
+.info-item > view {
+  line-height: 84rpx;
+  height: 84rpx;
+  display: inline-block;
+  color:#919191;
+}
+.avatar {
+  height: 200rpx;
+  width: 100%;
+  padding: 20rpx 0;
+}
+.avatar-image {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+}

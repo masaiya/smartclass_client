@@ -1,0 +1,15 @@
+<!--pages/history/childCpn/history-item.wxml-->
+<view class="layout">
+  <view class="dist-type">
+    <text>识别类型</text>
+    <text class="word">{{formatData.type}}</text>
+  </view>
+  <view class="dist-content">
+    <view class="content-title">识别内容</view>
+    <text class="word content">{{formatData.word}}</text>
+  </view>
+  <view class="dist-time">
+    <text>识别时间</text>
+    <text class="word">{{formatData.date}}</text>
+  </view>
+</view>

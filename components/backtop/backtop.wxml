@@ -1,0 +1,4 @@
+<!--components/backtop/backtop.wxml-->
+<view class="back-top" hidden="{{ishidden}}" >
+  <image class="image" src="/assets/common/top.png"></image>
+</view>

@@ -1,0 +1,11 @@
+<!--components/voice/voice-line.wxml-->
+<view class="layout">
+  <view class="container" style="width: {{width}}">
+    <view class="logo">
+     <image src='/assets/images/yuyin.svg' class="image"></image>
+    </view>
+  </view>
+  <view class="duration">
+    <text>{{formatDuration}}</text>
+  </view>
+</view>

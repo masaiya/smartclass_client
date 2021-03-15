@@ -1,0 +1,13 @@
+<!--pages/home/childCpns/swiper.wxml-->
+<!-- 使用swiper组件实现轮播图 
+circular无缝滚动 autoplay自动轮播 interval自动轮播间隔 
+indicator-dots是否有指示器 indicator-active-color指示器被选中颜色 indicator-color指示器颜色  -->
+<swiper class="swiper swiperheight" circular autoplay interval="2000" 
+        indicator-active-color="#E85F3E" indicator-color="rgba(0,0,0,.3)" >
+  <block wx:key="index" wx:for="{{list}}" > 
+    <swiper-item class="swiper-item">
+      <!-- mode="widthFix" 使图片根据父容器大小自适应-->
+      <image class="swiper-item-image" src="{{item.image || item}}" mode="widthFix"></image>
+    </swiper-item>
+  </block>
+</swiper>

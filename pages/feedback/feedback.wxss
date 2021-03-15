@@ -1,0 +1,78 @@
+/* pages/feedback/feedback.wxss */
+.word-content {
+  width: 80%;
+  height: 400rpx;
+  margin: 0 auto;
+  padding: 40rpx 40rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  box-shadow: 1px 1px 1px #ddd;
+  border: 1px solid #ddd;
+}
+.layout {
+  background: #f7f7f7;
+  width: 100%;
+  padding: 30rpx 0 40rpx 0; 
+}
+.select-item {
+  height: 100rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  width: 90%;
+  margin: 20rpx auto;
+  line-height: 100rpx;
+  border-radius: 20rpx;
+  box-shadow: 1px 1px 1px #ddd;
+  border: 1px solid #ddd;
+}
+.select-item .feedback-type {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.picker {
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  border-radius: 20rpx;
+  position: relative;
+  padding: 0 0 0 40rpx;
+}
+.type-name {
+  display: inline-block;
+  position: absolute;
+  right: 120rpx;
+}
+.image-container {
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+}
+.right-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+.scroll-view {
+  height: 1000rpx;
+  background: #f7f7f7;
+}
+.submit {
+  width: 90%;
+  background-image: linear-gradient(to right,#DC3E18,#E85F3E);
+  border-radius: 15rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+}
+.upload-contaniner {
+  width: 90%;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+  box-shadow: 1px 1px 1px #ddd;
+  border: 1px solid #ddd;
+  background: #fff;
+}

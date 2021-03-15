@@ -1,0 +1,5 @@
+<!--pages/profile/profile.wxml-->
+<view class='profile'>
+  <w-header bind:tap="seeInfo" username="{{username}}" avatar="{{avatar}}" />
+  <w-list-view infos="{{setupList}}"/>
+</view>

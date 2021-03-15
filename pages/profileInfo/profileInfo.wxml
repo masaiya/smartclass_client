@@ -1,0 +1,31 @@
+<!--pages/profileInfo/profileInfo.wxml-->
+<view class="layout">
+  <view>
+    <form catchsubmit="formSubmit">
+      <view class="avatar">
+        <image class="avatar-image" src="{{avatar}}" />
+      </view>
+      <view class="info-item">
+        <view>昵称</view>
+        <input disabled="true" value="{{nickname}}" class="weui-input" type="text" />
+      </view>
+      <view class="info-item">
+        <view>性别</view>
+        <input name='gender' value="{{gender}}" class="weui-input" type="text" />
+      </view>
+      <view class="info-item">
+        <view>生日</view>
+        <input value="{{birthday}}" name='birthday' class="weui-input" type="text" />
+      </view>
+      <view class="info-item">
+        <view>国家</view>
+        <input value="{{country}}" name='country' class="weui-input" type="text" />
+      </view>
+      <view class="info-item">
+        <view>电话</view>
+        <input value="{{phone}}" name='phone' class="weui-input" type="text" />
+      </view>
+      <button type="primary" size="mini" form-type="submit" class="button">保存</button>
+    </form>
+  </view>
+</view>

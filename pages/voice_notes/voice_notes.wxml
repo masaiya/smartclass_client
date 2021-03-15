@@ -1,0 +1,5 @@
+<view class="layout">
+  <block wx:for="{{data}}" wx:key="index">
+    <history-item data="{{item}}"></history-item>
+  </block>
+</view>

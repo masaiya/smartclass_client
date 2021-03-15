@@ -1,0 +1,7 @@
+/* pages/voice_notes/voice_notes.wxss */
+.layout {
+  background: #f7f7f7;
+  width: 100%;
+  padding: 30rpx 0 40rpx 0; 
+  height: 100%;
+}

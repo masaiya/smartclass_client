@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/setup/setup",
+    "pages/profileInfo/profileInfo",
+    "pages/feedback/feedback",
+    "pages/history/history",
+    "pages/class/class",
+    "pages/voice_notes/voice_notes",
+    "pages/diary/diary",
+    "pages/article/article"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#E85F3E"
+  },
+  "tabBar": {
+    "selectedColor": "#E85F3E",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/images/zhuye.png",
+        "selectedIconPath": "/assets/images/zhuye_active.png"
+      },
+      {
+        "pagePath": "pages/setup/setup",
+        "text": "我的",
+        "iconPath": "/assets/images/profile.png",
+        "selectedIconPath": "/assets/images/wo_active.png"
+      }
+    ]
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

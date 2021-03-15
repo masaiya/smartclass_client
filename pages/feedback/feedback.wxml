@@ -1,0 +1,33 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="layout">
+  <scroll-view class='scroll-view' scroll-y>
+    <view class="select-item">
+      <picker class="feedback-type" header-text="反馈类型" range="{{feedbackTypes}}" value="{{index}}" bindchange="bindPickerChange">
+        <view class="picker">
+          <view>
+            反馈类型
+          </view>
+          <view>
+            <view  class="type-name">
+              {{feedbackTypes[index]}}
+            </view>
+            <view class="image-container">
+              <image class="right-icon" src='/assets/images/right.svg'></image>
+            </view>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <textarea class="word-content" bindinput="inputWord" placeholder='请输入反馈内容' maxlength='{{-1}}' confirm-type="提交" auto-focus></textarea>
+    <view class="upload-contaniner">
+      <mp-cells>
+        <mp-cell>
+          <mp-uploader delete bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" title="图片上传" tips="上传反馈图片"></mp-uploader>
+        </mp-cell>
+      </mp-cells>
+    </view>
+  </scroll-view>
+  <view style="margin-top: 40rpx">
+    <view class="submit" bindtap="submitFeedback">提交</view>
+  </view>
+</view>
