@@ -1,5 +1,52 @@
 <!--pages/class/class.wxml-->
 <view>
-  <button type="primary" bind:tap="beginRecoder" >开始录音</button>
+  <!-- <button type="primary" bind:tap="beginRecoder" >开始录音</button>
   <button type="primary" bind:tap="colseRecoder" >停止录音</button>
+  <view>{{res}}</view> -->
+  <scroll-view class="scroll" scroll-y>
+    <view>1</view>
+    <view>2</view>
+    <view>3</view>
+    <view>4</view>
+    <view>5</view>
+    <view>6</view>
+    <view>7</view>
+    <view>8</view>
+    <view>9</view>
+    <view>10</view>
+    <view>1</view>
+    <view>2</view>
+    <view>3</view>
+    <view>4</view>
+    <view>5</view>
+    <view>6</view>
+    <view>7</view>
+    <view>8</view>
+    <view>9</view>
+    <view>10</view>
+    <view>1</view>
+    <view>2</view>
+    <view>3</view>
+    <view>4</view>
+    <view>5</view>
+    <view>6</view>
+    <view>7</view>
+    <view>8</view>
+    <view>9</view>
+    <view>10</view>
+    <view>1</view>
+    <view>2</view>
+    <view>3</view>
+    <view>4</view>
+    <view>5</view>
+    <view>6</view>
+    <view>7</view>
+    <view>8</view>
+    <view>9</view>
+    <view>10</view>
+  </scroll-view>
+  <view class="bottom" bindtap="bottomClick">
+    <text>记笔记</text>
+    <image class="pen" src="../../assets/images/class/pan_icon.png" mode="aspectFit"></image>
+  </view>
 </view>

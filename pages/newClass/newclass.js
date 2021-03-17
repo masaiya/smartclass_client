@@ -1,17 +1,22 @@
-// pages/class/class.js
+// pages/newClass/newclass.js
 const app = getApp();
-import {baseURL} from '../../service/config'
+import { baseURL } from '../../service/config'
 import { longAudioDist, shortAudioDist } from "../../service/distApi";
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
+    isActive: false,
     recorderManager: wx.getRecorderManager(),
     audioUrl: '',
-    res: '看一看'
+    res: ''
   },
   beginRecoder() {
+    this.setData({
+      isActive: !this.data.isActive
+    })
     const recorderManager = this.data.recorderManager;
     recorderManager.start({
       format: 'wav',
@@ -28,7 +33,6 @@ Page({
     })
     recorderManager.onStop((res) => {
       const filePath = res.tempFilePath;
-      // const filePath = '/assets/wav测试文件.wav';
       this.uploadFile(filePath).then(res => {
         longAudioDist({
           filename: res.filename
@@ -41,12 +45,18 @@ Page({
           filename: res.filename
         }).then(res => {
           console.log(res);
-          this.setData({res: res.data.data.result})
+          this.setData({res: this.data.res + res.data.data.result})
         }).catch(err => {
           console.log(err);
         })
       });
     })
+  },
+  colseRecoder() {
+    this.setData({
+      isActive: !this.data.isActive
+    })
+    this.data.recorderManager.stop();
   },
   uploadFile(files) {
     const openid = app.globalData.openid;
@@ -73,15 +83,6 @@ Page({
       })
     })
   },
-  colseRecoder() {
-    this.data.recorderManager.stop();
-  },
-  bottomClick() {
-    wx.navigateTo({
-      url: '/pages/newClass/newclass'
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */

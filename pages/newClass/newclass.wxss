@@ -1,0 +1,26 @@
+/* pages/newClass/newclass.wxss */
+#timeShow {
+  font-size: 60rpx;
+  text-align: center;
+}
+#title {
+  margin: 20rpx 45rpx;
+  border-bottom: 1px solid #ccc;
+}
+#textShow {
+  height: calc(100vh - 390rpx);
+  font-size: 32rpx;
+  border: 1px solid #ccc;
+  border-radius: 20rpx;
+  margin: 20rpx 40rpx;
+  padding: 20rpx 20rpx;
+}
+#bottom {
+  position: absolute;
+  bottom: 40rpx; 
+}
+#bottom .luyin {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 335rpx;
+}
