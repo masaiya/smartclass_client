@@ -30,7 +30,7 @@ Page({
     menuImages1: [
       {
         image: '/assets/images/wenzhang.png', 
-        name: '学习文章'
+        name: '今日美文'
       },
       {
         image: '/assets/images/wo.png', 

@@ -6,7 +6,7 @@
   box-shadow: 1px 1px 1px #ddd;
   border: 1px solid #ddd;
   border-radius: 20rpx;
-  height: 300rpx;
+  height: 240rpx;
   padding: 20rpx 20rpx;
   margin-bottom: 20rpx;
 }

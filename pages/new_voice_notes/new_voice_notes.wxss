@@ -8,7 +8,7 @@
   border-bottom: 1px solid #ccc;
 }
 #textShow {
-  height: calc(100vh - 390rpx);
+  height: calc(100vh - 300rpx);
   font-size: 32rpx;
   border: 1px solid #ccc;
   border-radius: 20rpx;

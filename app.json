@@ -8,6 +8,7 @@
     "pages/class/class",
     "pages/newClass/newclass",
     "pages/voice_notes/voice_notes",
+    "pages/new_voice_notes/new_voice_notes",
     "pages/diary/diary",
     "pages/article/article"
   ],

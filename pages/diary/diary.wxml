@@ -1,6 +1,10 @@
 <!--pages/history/history.wxml-->
 <view class="layout">
   <block wx:for="{{data}}" wx:key="index">
-      <history-item data="{{item}}"></history-item>
-    </block>
+    <history-item data="{{item}}"></history-item>
+  </block>
+  <view class="bottom" bindtap="bottomClick">
+    <text>记笔记</text>
+    <image class="pen" src="../../assets/images/class/pan_icon.png" mode="aspectFit"></image>
+  </view>
 </view>

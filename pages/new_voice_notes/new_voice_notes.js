@@ -3,7 +3,6 @@ const app = getApp();
 import { baseURL } from '../../service/config'
 import { longAudioDist, shortAudioDist } from "../../service/distApi";
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -36,7 +35,7 @@ Page({
     })
   },
   beginRecoder() {
-    var that = this;
+    let that = this;
     this.setData({
       isActive: !this.data.isActive,
       timer: setInterval(function(){
@@ -63,22 +62,22 @@ Page({
     recorderManager.onStop((res) => {
       const filePath = res.tempFilePath;
       this.uploadFile(filePath).then(res => {
-        longAudioDist({
-          filename: res.filename
-        }).then(res => {
-          console.log(res);
-          this.setData({res: this.data.res + res.data.data})
-        }).catch(err => {
-          console.log(err);
-        })
-        // shortAudioDist({
+        // longAudioDist({
         //   filename: res.filename
         // }).then(res => {
         //   console.log(res);
-        //   this.setData({res: this.data.res + res.data.data.result})
+        //   this.setData({res: this.data.res + res.data.data})
         // }).catch(err => {
         //   console.log(err);
         // })
+        shortAudioDist({
+          filename: res.filename
+        }).then(res => {
+          console.log(res);
+          this.setData({res: this.data.res + res.data.data.result})
+        }).catch(err => {
+          console.log(err);
+        })
       });
     })
   },
@@ -118,6 +117,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // app.setWatcher(this.data, this.watch); // 设置监听器
     const recorderManager = wx.getRecorderManager();
     this.setData({
       uplaodFile: this.uploadFile.bind(this)
@@ -127,6 +127,27 @@ Page({
     })
   },
 
+  // watch: {
+  //   isActive: function(newValue) {
+  //     setTimeout(function(){
+  //       this.setData({
+  //         time: this.data.time + 1
+  //       })
+  //       console.log(this.data.time);
+  //     }, 1000);
+      // var timer;
+      // if(newValue === true) {
+      //   timer = setInterval(function(){
+      //     this.setData({
+      //       time: this.data.time + 1
+      //     })
+      //     console.log(this.data.time);
+      //   }, 1000);
+      // } else {
+      //   timer = null;
+      // }
+  //   }
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

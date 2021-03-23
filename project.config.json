@@ -62,6 +62,12 @@
         {
           "name": "pages/newClass/newclass",
           "pathName": "pages/newClass/newclass",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/article/article",
+          "pathName": "pages/article/article",
           "scene": null
         }
       ]

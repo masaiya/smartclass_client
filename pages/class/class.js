@@ -9,7 +9,7 @@ Page({
   data: {
     recorderManager: wx.getRecorderManager(),
     audioUrl: '',
-    res: '看一看'
+    res: ''
   },
   beginRecoder() {
     const recorderManager = this.data.recorderManager;
