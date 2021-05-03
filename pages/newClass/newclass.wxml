@@ -4,7 +4,7 @@
     <text>{{showTime}}</text>
   </view>
   <view id="title">
-    <input type="text" placeholder="请输入标题..."></input>
+    <input type="text" bindinput="inputTitle" placeholder="请输入标题..."></input>
   </view>
   <view id="textShow">
     <text>{{res}}</text>

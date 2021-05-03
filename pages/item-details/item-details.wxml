@@ -1,0 +1,16 @@
+<!--pages/item-details/item-details.wxml-->
+<view class="layout">
+  <view class="header">
+    {{content.title}}
+  </view>
+  <view class="audio">
+    <audio class="audio-content" controls id="{{content.key}}" name="{{content.title}}" author="" bindtimeupdate="bindtimeupdate" bindended="bindended" src="{{content.fileUrls[playAudioIndex]}}"></audio>
+  </view>
+  <view class="content">
+    <text>{{content.distResult}}</text>
+  </view>
+  <view class="footer">
+    {{content.createTime}}
+  </view>
+  <audio></audio>
+</view>

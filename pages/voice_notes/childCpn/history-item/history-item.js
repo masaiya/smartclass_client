@@ -26,27 +26,6 @@ Component({
   },
   lifetimes: {
     attached() {
-      const data = this.properties.data
-      const date = formatTime(data.date)
-      const type = data.type
-      let word = ''
-      const result = data.result.words_result
-      if(Array.isArray(result)) {
-        result.forEach((item) => {
-          word += (item.words+'.')
-        })
-      }else {
-        for(let key in result) {
-          word += result[key]
-        }
-      }
-      this.setData({
-        formatData: {
-          date,
-          word,
-          type
-        }
-      })
     }
   }
 })

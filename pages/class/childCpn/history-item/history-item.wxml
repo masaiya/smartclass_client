@@ -1,0 +1,17 @@
+<!--pages/history/childCpn/history-item.wxml-->
+<view class="layout" bindtap="seeDetails">
+  <view class="dist-type">
+    <text class="left">{{data.title}}</text>
+    <view class="right">
+      <image class="icon" src="/assets/images/right_blank.svg"></image>
+    </view>
+  </view>
+  <view class="dist-content">
+    <view class="content-title">识别文本</view>
+    <text class="word content">{{data.distResult}}</text>
+  </view>
+  <view class="dist-time">
+    <text>创建时间</text>
+    <text class="word">{{data.createTime}}</text>
+  </view>
+</view>

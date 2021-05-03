@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "history-item": "./childCpn/history-item/history-item"
-  },
-  "navigationBarTitleText": "历史记录"
-}

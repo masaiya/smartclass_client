@@ -1,8 +1,5 @@
 // pages/home.js
 const app = getApp();
-import {wordDist, ticketDist, busTicketDist} from '../../service/distApi'
-import {getTargetLag,updateTargetLag} from '../../service/targetLag'
-import {getHistory, postHistory} from '../../service/history'
 Page({
 
   /**
@@ -38,14 +35,6 @@ Page({
       },
     ],
     isToUserInfo: false,
-    targetLanguage: [
-      '中文','英语','日语','韩语','法语','西班牙语','德语','泰语','俄语','意大利语',
-      '丹麦语','葡萄牙语','繁体中文'
-    ],
-    targetLanguageValue: [
-      'zh','en','jp','kor','fra','spa','de','th','ru','it',
-      'dan','pt','cht'
-    ],
     value: []
   },
 
@@ -54,67 +43,61 @@ Page({
    */
   onLoad: function (options) {
     const that = this;
-    wx.getSetting({
-      success (res){
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: (res) => {
-              app.globalData.userInfo = res.userInfo;
-            },
-            fail: (err) => {
-              wx.showToast({
-                title: '获取用户信息失败',
-                icon: 'none'
-              })
-            }
-          })
+    const userInfo = wx.getStorageSync('userInfo');
+    if(!userInfo) {
+      this.setData({
+        isShowLogin: true
+      })
+      wx.hideTabBar({
+        animation: true,
+      })
+    } else {
+      app.globalData.userInfo = userInfo;
+    }
+  },
+  denialAuthorization() {
+    this.setData({
+      isShowLogin: false,
+    })
+    wx.showToast({
+      title: '您并没有对我们进行身份授权，将无法获取当前用户信息',
+      icon: 'none'
+    })
+  },
+  bindGetUserInfo() {
+    const that = this;
+    wx.getUserProfile({
+      desc: "展示用户个人信息",
+      success(res) {
+        if(res.userInfo) {
+          wx.setStorageSync('userInfo', res.userInfo);
+          app.globalData.userInfo = res.userInfo;
         }else {
-          that.setData({
-            isShowLogin: true
+          wx.showToast({
+            title: '您并没有对我们进行身份授权，将无法获取当前用户信息',
+            icon: 'none'
+          })
+        }
+        that.setData({
+          isShowLogin: false
+        })
+        wx.showTabBar({
+          animation: true,
+        })
+        if(that.data.isToUserInfo) {
+          wx.navigateTo({
+            url: '/pages/profileInfo/profileInfo'
           })
         }
       },
-      fail: (err) => {
-        wx.showToast({
-          title: '获取用户权限失败',
-          icon: 'none'
-        })
+      fail(err) {
+        console.log(err)
       }
-    })
-  },
-  onShow() {
+    });
   },
   hrefVideo() {
     wx.navigateTo({
       url: '/pages/video/video'
-    })
-  },
-  bindGetUserInfo(res) {
-    this.setData({
-      isShowLogin: false
-    })
-    const userInfo = res.detail.userInfo;
-    if(userInfo) {
-      app.globalData.userInfo = userInfo;
-    }else {
-      wx.showToast({
-        title: '您并没有对我们进行身份授权，将无法获取当前用户信息',
-        icon: 'none'
-      })
-    }
-  },
-  bindChange(e) {
-    const val = e.detail.value;
-    const targetLag = this.data.targetLanguageValue[val[0]];
-    const openid = app.globalData.openid;
-    updateTargetLag(openid,targetLag).then(res => {
-    }).catch(err => {
-      console.log(err);
-      wx.showToast({
-        title: '修改目标语言失败',
-        icon: 'none'
-      })
     })
   },
   handleMenuTap(event) {
@@ -163,7 +146,7 @@ Page({
         })
         break;
       }
-      case '学习文章': {
+      case '今日美文': {
         wx.navigateTo({
           url: '/pages/article/article'
         })

@@ -1,0 +1,24 @@
+/* pages/item-details/item-details.wxss */
+.audio {
+  padding: 0 70rpx;
+}
+.header {
+  font-size: 40rpx;
+  padding: 40rpx 70rpx;
+}
+.content {
+  width: calc(100% - 110rpx);
+  border: 1px solid #ccc;
+  border-radius: 8rpx;
+  height: calc(100vh - 500rpx);
+  overflow: auto;
+  margin-top: 30rpx;
+  margin-left: 55rpx;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.footer {
+  margin-top: 30rpx;
+  padding-right: 70rpx;
+  text-align: right;
+}

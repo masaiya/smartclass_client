@@ -6,16 +6,40 @@
   box-shadow: 1px 1px 1px #ddd;
   border: 1px solid #ddd;
   border-radius: 20rpx;
-  height: 300rpx;
   padding: 20rpx 20rpx;
   margin-bottom: 20rpx;
 }
 .dist-type {
+  position: relative;
   border-bottom: 1px solid #eee;
   height: 60rpx;
   line-height: 60rpx;
   display: flex;
   justify-content: space-between;
+}
+.left {
+  display: inline-block;
+  height: 60rpx;
+  width: 200rpx;
+}
+.right {
+  width: 200rpx;
+  display: inline-block;
+  height: 60rpx;
+}
+.right text {
+  position: absolute;
+  right: 60rpx;
+  display: inline-block;
+  line-height: 60rpx;
+  height: 60rpx;
+}
+.icon {
+  position: absolute;
+  right: 10rpx;
+  margin-top: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .dist-content {
   border-bottom: 1px solid #eee;

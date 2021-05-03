@@ -1,12 +1,21 @@
 /* pages/class/class.wxss */
+.layout {
+  background: #e5e5e5;
+  height: 100vh;
+  width: 100%;
+}
 .scroll {
-  background: pink;
   height: calc(100vh - 120rpx);
+  padding-top: 20rpx;
+  background: #e5e5e5;
+}
+.no-history {
+  padding: 30rpx 40rpx;
+  font-size: 35rpx;
 }
 .bottom {
   background: #E85F3E;
   height: 70rpx;
-  width: 160rpx;
   line-height: 70rpx;
   padding: 0 70rpx;
   border-radius: 20rpx;
@@ -14,9 +23,14 @@
   position: absolute;
   bottom: 35rpx;
   margin-left: 225rpx;
+  width: 160rpx;
+}
+.new {
 }
 .pen {
+  position: absolute;
   margin-left: 15rpx;
   width: 40rpx;
   height: 40rpx;
+  top: 12rpx
 }
