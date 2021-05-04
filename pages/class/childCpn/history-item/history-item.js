@@ -1,4 +1,5 @@
 import {formatTime} from '../../../../utils/util'
+import { getLongVideoHistory, deleteLongVideoHistory } from '../../../../service/history';
 const app = getApp()
 Component({
   /**
@@ -19,6 +20,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    showDelete: false,
   },
 
   /**
@@ -29,6 +31,40 @@ Component({
       app.globalData.currentItemData = this.properties.data;
       wx.navigateTo({
         url: "/pages/item-details/item-details"
+      })
+    },
+    handleMask() {
+      this.setData({
+        showDelete: false
+      })
+    },
+    handleLongpress(e) {
+      // this.setData({
+      //   deleteButtonY: e.detail.y,
+      //   deleteButtonX: e.detail.x
+      // })
+      this.setData({
+        showDelete: true
+      })
+    },
+    calcle() {
+      this.setData({
+        showDelete: false
+      })
+    },
+    deleteItem() {
+      deleteLongVideoHistory(app.globalData.openid, this.properties.data.key).then(res => {
+        if(res.data.message == 'ok') {
+          //让父组件更新
+          this.triggerEvent('onDelete')
+        }else {
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none'
+          })
+        }
+      }).catch(err => {
+        console.log(err);
       })
     }
   },

@@ -17,7 +17,6 @@ Page({
     this.setData({
       content: app.globalData.currentItemData,
     })
-    console.log(this.data.content);
   },
   bindtimeupdate(e) {
     console.log(e.detail)

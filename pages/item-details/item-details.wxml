@@ -4,7 +4,7 @@
     {{content.title}}
   </view>
   <view class="audio">
-    <audio class="audio-content" controls id="{{content.key}}" name="{{content.title}}" author="" bindtimeupdate="bindtimeupdate" bindended="bindended" src="{{content.fileUrls[playAudioIndex]}}"></audio>
+    <audio class="audio-content" controls id="{{content.key}}" name="{{content.title}}" author="" bindtimeupdate="bindtimeupdate" bindended="bindended" src="{{content.fileUrls[playAudioIndex]}}" poster="/assets/images/audio_back.jpeg"></audio>
   </view>
   <view class="content">
     <text>{{content.distResult}}</text>

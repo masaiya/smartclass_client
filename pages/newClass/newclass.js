@@ -2,7 +2,7 @@
 const app = getApp();
 import { baseURL } from '../../service/config'
 import { longAudioDist, shortAudioDist } from "../../service/distApi";
-import { postLongVideoHistory } from '../../service/history';
+import { postLongVideoHistory, mergeFiles } from '../../service/history';
 Page({
 
   /**
@@ -166,7 +166,7 @@ Page({
       }
       postLongVideoHistory(app.globalData.openid, historyData).then(res => {
         if(res.data.code == 0) {
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/class/class',
           })
         }else {

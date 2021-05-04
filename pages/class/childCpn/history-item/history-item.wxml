@@ -1,5 +1,11 @@
 <!--pages/history/childCpn/history-item.wxml-->
-<view class="layout" bindtap="seeDetails">
+<view class="layout" bindtap="seeDetails" bind:longpress="handleLongpress">
+  <view class="mask" catchtap="handleMask" wx:if="{{showDelete}}">
+  </view>
+  <view class="delete-button" wx:if="{{showDelete}}">
+    <span class="delete" catchtap="deleteItem">删除</span>
+    <span class="cancle" catchtap="calcle">取消</span>
+  </view>
   <view class="dist-type">
     <text class="left">{{data.title}}</text>
     <view class="right">

@@ -85,3 +85,15 @@ export function deleteNormalNotebookHistory(openid,key) {
     method: 'delete'
   })
 }
+
+export function mergeFiles(filename) {
+  return request({
+    url: `/mergeFiles?filename=${filename}`,
+  })
+}
+
+export function test(filename) {
+  return request({
+    url: `/test?filename=${filename}`,
+  })
+}
