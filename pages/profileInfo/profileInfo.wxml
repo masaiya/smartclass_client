@@ -14,8 +14,8 @@
         <input name='gender' value="{{gender}}" class="weui-input" type="text" />
       </view>
       <view class="info-item">
-        <view>生日</view>
-        <input value="{{birthday}}" name='birthday' class="weui-input" type="text" />
+        <view>年龄</view>
+        <input value="{{age}}" name='age' class="weui-input" type="text" />
       </view>
       <view class="info-item">
         <view>国家</view>

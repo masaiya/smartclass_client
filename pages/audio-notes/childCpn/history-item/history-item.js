@@ -1,5 +1,5 @@
 import {formatTime} from '../../../../utils/util'
-import { deleteNormalNotebookHistory } from '../../../../service/history';
+import { getSmallVideoHistory, deleteSmallVideoHistory } from '../../../../service/history';
 const app = getApp()
 Component({
   /**
@@ -53,7 +53,7 @@ Component({
       })
     },
     deleteItem() {
-      deleteNormalNotebookHistory(app.globalData.openid, this.properties.data.key).then(res => {
+      deleteSmallVideoHistory(app.globalData.openid, this.properties.data.key).then(res => {
         if(res.data.message == 'ok') {
           //让父组件更新
           this.triggerEvent('onDelete')

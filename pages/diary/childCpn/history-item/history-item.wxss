@@ -1,25 +1,43 @@
 /* pages/history/childCpn/history-item.wxss */
 .layout {
   background: #fff;
+  position: relative;
   width: 88%;
   margin: 0 auto;
   box-shadow: 1px 1px 1px #ddd;
   border: 1px solid #ddd;
   border-radius: 20rpx;
-  height: 300rpx;
   padding: 20rpx 20rpx;
   margin-bottom: 20rpx;
 }
 .dist-type {
+  position: relative;
   border-bottom: 1px solid #eee;
   height: 60rpx;
   line-height: 60rpx;
   display: flex;
   justify-content: space-between;
 }
+.left {
+  display: inline-block;
+  height: 60rpx;
+  width: 200rpx;
+}
+.right {
+  width: 200rpx;
+  display: inline-block;
+  height: 60rpx;
+}
+.icon {
+  position: absolute;
+  right: 10rpx;
+  margin-top: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
 .dist-content {
   border-bottom: 1px solid #eee;
-  height: 240rpx;
+  height: 180rpx;
 }
 .dist-content .content-title {
   height: 60rpx;
@@ -29,7 +47,7 @@
   line-height: 50rpx;
   display: -webkit-box; 
   -webkit-box-orient: vertical; 
-  -webkit-line-clamp: 3; 
+  -webkit-line-clamp: 2; 
   overflow: hidden;
 }
 .dist-time {
@@ -40,4 +58,42 @@
 }
 .word {
   color: #919191;
+}
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.delete-button {
+  position: absolute;
+  width: 200rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  border: 1px solid #fff;
+  background: #ddd;
+  color: #fff;
+  top: 40%;
+  right: 80rpx;
+  z-index: 1000;
+}
+.cancle {
+  display: inline-block;
+  height: 100%;
+  width: 49%;
+  text-align: center;
+  line-height: 60rpx;
+}
+.delete {
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  background: #E85F3E;
+  border-right: 1px solid #fff;
+  display: inline-block;
+  height: 100%;
+  line-height: 60rpx;
+  width: 49%;
+  text-align: center;
 }

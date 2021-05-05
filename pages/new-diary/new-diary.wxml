@@ -1,0 +1,21 @@
+<!--pages/newClass/newclass.wxml-->
+<view>
+  <view id="title">
+    <input type="text" bindinput="inputTitle" placeholder="请输入标题..."></input>
+  </view>
+  <view id="textShow">
+    <editor 
+      id="editor" 
+      class="ql-container"
+      placeholder="请输入笔记内容"
+      showImgSize
+      showImgToolbar
+      showImgResize
+      bindstatuschange="onStatusChange"
+      bindready="onEditorReady">
+    ></editor>
+  </view>
+  <view class="bottom" bindtap="saveDiary">
+    <text class="new">保存</text>
+  </view>
+</view>

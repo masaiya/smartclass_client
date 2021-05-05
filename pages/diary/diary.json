@@ -2,5 +2,5 @@
   "usingComponents": {
     "history-item": "./childCpn/history-item/history-item"
   },
-  "navigationBarTitleText": "日记本"
+  "navigationBarTitleText": "智慧课堂"
 }

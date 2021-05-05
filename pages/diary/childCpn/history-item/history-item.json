@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "voice-line": "/components/voice/voice-line"
+  }
 }

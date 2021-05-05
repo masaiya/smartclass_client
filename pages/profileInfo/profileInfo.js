@@ -12,7 +12,7 @@ Page({
     avatar: '',
     phone: '暂无',
     disabled: false,
-    birthday: '暂无',
+    age: '暂无',
     country: '暂无'
   },
 
@@ -43,7 +43,7 @@ Page({
             this.setData({
               gender: data.gender,
               country: data.country,
-              birthday: data.birthday,
+              age: data.age,
               phone: data.phone
             })
           }

@@ -2,7 +2,9 @@
 const app = getApp();
 import { baseURL } from '../../service/config'
 import { longAudioDist, shortAudioDist } from "../../service/distApi";
+import { postSmallVideoHistory, mergeFiles } from '../../service/history';
 Page({
+
   /**
    * 页面的初始数据
    */
@@ -13,7 +15,9 @@ Page({
     res: '',
     timer: null,
     time: 0,
-    showTime: '00:00:00'
+    showTime: '00:00:00',
+    title: '',
+    fileUrls: []
   },
   format() {
     var secondTime = parseInt(this.data.time); // 秒
@@ -35,7 +39,7 @@ Page({
     })
   },
   beginRecoder() {
-    let that = this;
+    var that = this;
     this.setData({
       isActive: !this.data.isActive,
       timer: setInterval(function(){
@@ -61,23 +65,44 @@ Page({
     })
     recorderManager.onStop((res) => {
       const filePath = res.tempFilePath;
+      const fileTime = res.duration/1000;
       this.uploadFile(filePath).then(res => {
-        // longAudioDist({
-        //   filename: res.filename
-        // }).then(res => {
-        //   console.log(res);
-        //   this.setData({res: this.data.res + res.data.data})
-        // }).catch(err => {
-        //   console.log(err);
-        // })
-        shortAudioDist({
-          filename: res.filename
-        }).then(res => {
-          console.log(res);
-          this.setData({res: this.data.res + res.data.data.result})
-        }).catch(err => {
-          console.log(err);
+        that.data.fileUrls.push(res.url)
+        that.setData({
+          fileUrls: that.data.fileUrls
         })
+        if(fileTime < 60) {
+          shortAudioDist({
+            filename: res.filename
+          }).then(res => {
+            const data = res.data.data;
+            if(data.result[0] == '' || data.err_no !== 0) {
+              wx.showToast({
+                title: '识别失败',
+                icon: 'error'
+              })
+            }else {
+              that.setData({res: that.data.res + res.data.data.result})
+            }
+          }).catch(err => {
+            console.log(err);
+          })
+        }else {
+          longAudioDist({
+            filename: res.filename
+          }).then(res => {
+            if(!res.data.data || typeof res.data.data == 'object') {
+              wx.showToast({
+                title: '识别失败',
+                icon: 'error'
+              })
+            } else {
+              that.setData({res: that.data.res + res.data.data})
+            }
+          }).catch(err => {
+            console.log(err);
+          })
+        }
       });
     })
   },
@@ -113,87 +138,58 @@ Page({
       })
     })
   },
+  inputTitle(e) {
+    this.setData({
+      title: e.detail.value
+    })
+  },
+  uploadYuyin() {
+    const that = this;
+    if(!this.data.title) {
+      wx.showToast({
+        title: '请输入标题再进行提交',
+        icon: 'none'
+      })
+    }else if(!this.data.res) {
+      wx.hideToast({});
+      wx.showToast({
+        title: '没有识别内容',
+        icon: 'none'
+      })
+    } else {
+      const historyData = {
+        key: app.globalData.openid + Date.now(),
+        createTime: Date.now(),
+        fileUrls: this.data.fileUrls,
+        distResult: that.data.res,
+        title: this.data.title
+      }
+      postSmallVideoHistory(app.globalData.openid, historyData).then(res => {
+        if(res.data.code == 0) {
+          wx.redirectTo({
+            url: '/pages/audio-notes/audio-notes',
+          })
+        }else {
+          wx.showToast({
+            title: '提交失败',
+            icon: 'none'
+          })
+        }
+      }).catch(err => {
+        console.log(err);
+      }) 
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // app.setWatcher(this.data, this.watch); // 设置监听器
     const recorderManager = wx.getRecorderManager();
     this.setData({
       uplaodFile: this.uploadFile.bind(this)
     })
     this.setData({
-     recorderManager
+      recorderManager
     })
   },
-
-  // watch: {
-  //   isActive: function(newValue) {
-  //     setTimeout(function(){
-  //       this.setData({
-  //         time: this.data.time + 1
-  //       })
-  //       console.log(this.data.time);
-  //     }, 1000);
-      // var timer;
-      // if(newValue === true) {
-      //   timer = setInterval(function(){
-      //     this.setData({
-      //       time: this.data.time + 1
-      //     })
-      //     console.log(this.data.time);
-      //   }, 1000);
-      // } else {
-      //   timer = null;
-      // }
-  //   }
-  // },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

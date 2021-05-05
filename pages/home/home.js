@@ -136,7 +136,7 @@ Page({
       }
       case '语音笔记': {
         wx.navigateTo({
-          url: '/pages/voice_notes/voice_notes'
+          url: '/pages/audio-notes/audio-notes'
         })
         break;
       }

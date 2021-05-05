@@ -6,11 +6,12 @@
     "pages/feedback/feedback",
     "pages/class/class",
     "pages/newClass/newclass",
-    "pages/voice_notes/voice_notes",
+    "pages/audio-notes/audio-notes",
     "pages/new_voice_notes/new_voice_notes",
     "pages/diary/diary",
     "pages/article/article",
-    "pages/item-details/item-details"
+    "pages/item-details/item-details",
+    "pages/new-diary/new-diary"
   ],
   "window": {
     "navigationBarTextStyle": "white",

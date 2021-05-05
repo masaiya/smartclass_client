@@ -4,7 +4,7 @@
   text-align: center;
 }
 #title {
-  margin: 20rpx 45rpx;
+  margin: 40rpx 45rpx;
   border-bottom: 1px solid #ccc;
 }
 #textShow {
@@ -15,17 +15,16 @@
   margin: 20rpx 40rpx;
   padding: 20rpx 20rpx;
 }
-#bottom {
+.bottom {
+  background: #E85F3E;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 70rpx;
+  border-radius: 20rpx;
+  color: #fff;
   position: absolute;
-  bottom: 40rpx; 
-}
-#bottom .luyin {
-  width: 80rpx;
-  height: 80rpx;
-  margin-left: 335rpx;
-  margin-right: 180rpx;
-}
-#bottom .gouxuan {
-  width: 80rpx;
-  height: 80rpx;
+  bottom: 35rpx;
+  text-align: center;
+  margin-left: 225rpx;
+  width: 160rpx;
 }

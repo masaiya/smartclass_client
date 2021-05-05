@@ -1,7 +1,7 @@
 <!--pages/class/class.wxml-->
 <view class="layout">
   <view wx:if="{{!hasHistory}}">
-    <view class="no-history">您还没有创建过笔记哦~</view>
+    <view class="no-history">您当前还没有识别记录哦~</view>
   </view>
   <scroll-view wx:else class="scroll" scroll-y>
     <view wx:for="{{historyData}}" wx:key="index">

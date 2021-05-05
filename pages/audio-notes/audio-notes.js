@@ -2,7 +2,8 @@
 const app = getApp();
 import { baseURL } from '../../service/config'
 import { formatTime } from '../../utils/util'
-import { getNormalNotebookHistory, mergeFiles } from '../../service/history';
+import { longAudioDist, shortAudioDist } from "../../service/distApi";
+import { getSmallVideoHistory, mergeFiles } from '../../service/history';
 Page({
   /**
    * 页面的初始数据
@@ -25,7 +26,7 @@ Page({
   getHistoryData() {
     const that = this;
     const openid = app.globalData.openid;
-    getNormalNotebookHistory(openid).then(res => {
+    getSmallVideoHistory(openid).then(res => {
       if(res.data.code !== 0 || !res.data.data) {
         that.setData({
           hasHistory: false
@@ -54,7 +55,7 @@ Page({
   },
   bottomClick() {
     wx.navigateTo({
-      url: '/pages/new-diary/new-diary'
+      url: '/pages/new_voice_notes/new_voice_notes'
     })
   },
 })

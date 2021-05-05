@@ -1,13 +1,13 @@
 /* pages/class/class.wxss */
 .layout {
-  background: #e5e5e5;
+  background: #f7f7f7;
   height: 100vh;
   width: 100%;
 }
 .scroll {
   height: calc(100vh - 120rpx);
   padding-top: 20rpx;
-  background: #e5e5e5;
+  background: #f7f7f7;
 }
 .no-history {
   padding: 30rpx 40rpx;

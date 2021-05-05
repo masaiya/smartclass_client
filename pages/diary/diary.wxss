@@ -1,7 +1,34 @@
-/* pages/history/history.wxss */
+/* pages/class/class.wxss */
 .layout {
   background: #f7f7f7;
+  height: 100vh;
   width: 100%;
-  padding: 30rpx 0 40rpx 0; 
-  height: 100%;
+}
+.scroll {
+  height: calc(100vh - 120rpx);
+  padding-top: 20rpx;
+  background: #f7f7f7;
+}
+.no-history {
+  padding: 30rpx 40rpx;
+  font-size: 35rpx;
+}
+.bottom {
+  background: #E85F3E;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 70rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  position: absolute;
+  bottom: 35rpx;
+  margin-left: 225rpx;
+  width: 160rpx;
+}
+.pen {
+  position: absolute;
+  margin-left: 15rpx;
+  width: 40rpx;
+  height: 40rpx;
+  top: 12rpx
 }
