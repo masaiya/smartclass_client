@@ -39,6 +39,7 @@ App({
     baseDistResult: {},
     busTicketDistResult: {},
     trainTicketDistResult: {},
-    currentItemData: {}
+    currentItemData: {},
+    currentDiaryData: []
   }
 })

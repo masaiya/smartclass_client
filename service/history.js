@@ -72,8 +72,9 @@ export function postNormalNotebookHistory(openid,historyData) {
       openid,
       key: historyData.key,
       createTime: historyData.createTime,
-      distResult: historyData.distResult,
-      title: historyData.title
+      delta: historyData.delta,
+      title: historyData.title,
+      text: historyData.text
     },
     contentType: 'application/json'
   })

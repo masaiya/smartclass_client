@@ -1,20 +1,28 @@
 import { postNormalNotebookHistory } from '../../service/history'
 import { getArticleData, postArticleData } from '../../service/article'
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
-    content: []
+    content: [],
+    currentArticleKey: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const key = parseInt(Math.random()*50);
-    this.getArticleData(key);
+    const currentTime = wx.getStorageSync('currentTime');
+    const currentArticleKey = wx.getStorageSync('currentArticleKey');
+    if(Date.now() - currentTime > 86400000) {
+      wx.setStorageSync('currentArticleKey', currentArticleKey++)
+      wx.setStorageSync('currentTime', currentTime)
+      this.getArticleData(currentArticleKey++);
+    } else {
+      this.getArticleData(currentArticleKey);
+    }
   },
   getArticleData(key) {
     getArticleData(key).then(res => {
@@ -34,7 +42,7 @@ Page({
     })
   },
   toFirend() {
-    this.postArticleData();
+    // this.postArticleData();
   },
   postArticleData() {
     const title = '最美的遇见';

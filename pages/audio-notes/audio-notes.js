@@ -10,7 +10,7 @@ Page({
    */
   data: {
     audioUrl: '',
-    historyData: {},
+    historyData: [],
     res: '',
     hasHistory: false
   },

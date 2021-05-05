@@ -13,8 +13,8 @@
     </view>
   </view>
   <view class="dist-content">
-    <view class="content-title">识别文本</view>
-    <text class="word content">{{data.distResult}}</text>
+    <view class="content-title">文本内容</view>
+    <text class="word content">{{data.text}}</text>
   </view>
   <view class="dist-time">
     <text>创建时间</text>

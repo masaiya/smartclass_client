@@ -105,6 +105,9 @@ Page({
           title: '您的反馈我们已经收到,感谢您的帮助',
           icon: 'none'
         })
+        wx.redirectTo({
+          url: '/pages/home/home',
+        })
       }else {
         wx.showToast({
           title: '服务器出错了，请稍后再试',

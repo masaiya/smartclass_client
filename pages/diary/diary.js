@@ -8,8 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    audioUrl: '',
-    historyData: {},
+    historyData: [],
     res: '',
     hasHistory: false
   },
@@ -17,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHistoryData();
+    this.getHistoryData()
   },
   onDelete() {
     this.getHistoryData();
@@ -31,24 +30,10 @@ Page({
           hasHistory: false
         })
       }else {
-        const data = res.data.data.content;
         that.setData({
-          hasHistory: true
+          hasHistory: true,
+          historyData: res.data.data.content
         })
-        data.forEach((item) => {
-          item.createTime = formatTime(item.createTime);
-        })
-        if(data) {
-          that.setData({
-            historyData: data
-          })
-        }
-        // console.log(data)
-        // mergeFiles(data[0].fileUrls).then(res => {
-        //   console.log(res);
-        // }).catch(err => {
-        //   console.log(err)
-        // })
       }
     })
   },

@@ -1,0 +1,5 @@
+<!--pages/diary-details/diary-details.wxml-->
+<view class="layout">
+  <editor id="editor" class="ql-container" read-only bindready="onEditorReady">
+  </editor>
+</view>

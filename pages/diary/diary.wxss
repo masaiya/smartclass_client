@@ -5,7 +5,7 @@
   width: 100%;
 }
 .scroll {
-  height: calc(100vh - 120rpx);
+  height: calc(100vh - 180rpx);
   padding-top: 20rpx;
   background: #f7f7f7;
 }
@@ -21,7 +21,7 @@
   border-radius: 20rpx;
   color: #fff;
   position: absolute;
-  bottom: 35rpx;
+  bottom: 60rpx;
   margin-left: 225rpx;
   width: 160rpx;
 }

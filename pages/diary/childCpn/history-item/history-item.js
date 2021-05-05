@@ -28,9 +28,9 @@ Component({
    */
   methods: {
     seeDetails() {
-      app.globalData.currentItemData = this.properties.data;
+      app.globalData.currentDiaryData = this.properties.data;
       wx.navigateTo({
-        url: "/pages/item-details/item-details"
+        url: "/pages/diary-details/diary-details"
       })
     },
     handleMask() {

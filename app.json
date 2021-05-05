@@ -11,7 +11,9 @@
     "pages/diary/diary",
     "pages/article/article",
     "pages/item-details/item-details",
-    "pages/new-diary/new-diary"
+    "pages/new-diary/new-diary",
+    "pages/diary-details/diary-details",
+    "pages/setting/setting"
   ],
   "window": {
     "navigationBarTextStyle": "white",

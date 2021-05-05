@@ -1,15 +1,15 @@
 <!--pages/class/class.wxml-->
 <view class="layout">
   <view wx:if="{{!hasHistory}}">
-    <view class="no-history">您还没有创建过笔记哦~</view>
+    <view class="no-history">您还没有记录过日记哦~</view>
   </view>
   <scroll-view wx:else class="scroll" scroll-y>
     <view wx:for="{{historyData}}" wx:key="index">
-      <history-item bind:onDelete="onDelete" data="{{item}}" audioNum="{{item.fileUrls.length}}" ></history-item>
+      <history-item bind:onDelete="onDelete" data="{{item}}" ></history-item>
     </view>
   </scroll-view>
   <view class="bottom" bindtap="bottomClick">
-    <text class="new">记笔记</text>
+    <text class="new">写日记</text>
     <image class="pen" src="../../assets/images/class/pan_icon.png" mode="aspectFit"></image>
   </view>
 </view>
