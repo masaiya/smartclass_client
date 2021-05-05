@@ -1,7 +1,7 @@
 <!--pages/article/article.wxml-->
 <scroll-view scroll-y>
   <view class="scroll">
-    <view class="title">{{content}}</view>
+    <view class="title">{{title}}</view>
     <view class="para" wx:for="{{content}}" wx:key="index">
       {{item}}
     </view>

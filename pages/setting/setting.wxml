@@ -1,2 +1,18 @@
 <!--service/setting/setting.wxml-->
-<text>service/setting/setting.wxml</text>
+<view class="layout">
+  <view class="avatar">
+    <image class="avatar-image" src="../../assets/logos/logo.jpg" />
+  </view>
+  <view class="app-name">
+    智慧课堂
+  </view>
+  <view class="version-container info-item">
+    <view class="version-title">版本号</view>
+    <view class="version">{{currentVersion}}</view>
+  </view>
+  <view class="about-container">
+    <view class="about-title">关于</view>
+    <view class="about">个人毕业设计小程序,所有功能内容仅供参考,开发者本人不负法律责任</view>
+  </view>
+  <button type="primary" size="mini" bindtap="updateVersion" class="button">更新版本</button>
+</view>

@@ -7,7 +7,8 @@ Page({
    */
   data: {
     content: [],
-    currentArticleKey: 0
+    currentArticleKey: 0,
+    title: ''
   },
 
   /**
@@ -16,12 +17,18 @@ Page({
   onLoad: function (options) {
     const currentTime = wx.getStorageSync('currentTime');
     const currentArticleKey = wx.getStorageSync('currentArticleKey');
-    if(Date.now() - currentTime > 86400000) {
-      wx.setStorageSync('currentArticleKey', currentArticleKey++)
-      wx.setStorageSync('currentTime', currentTime)
-      this.getArticleData(currentArticleKey++);
+    if(!currentTime && !currentArticleKey) {
+      wx.setStorageSync('currentArticleKey', 0)
+      wx.setStorageSync('currentTime', Date.now())
+      this.getArticleData(0);
     } else {
-      this.getArticleData(currentArticleKey);
+      if(Date.now() - currentTime > 86400000) {
+        wx.setStorageSync('currentArticleKey', currentArticleKey++)
+        wx.setStorageSync('currentTime', currentTime)
+        this.getArticleData(currentArticleKey++);
+      } else {
+        this.getArticleData(currentArticleKey);
+      }
     }
   },
   getArticleData(key) {
@@ -42,7 +49,7 @@ Page({
     })
   },
   toFirend() {
-    // this.postArticleData();
+    this.postArticleData();
   },
   postArticleData() {
     const title = '最美的遇见';
@@ -55,7 +62,7 @@ Page({
       '   其实你一直在我的梦中，我们无法选择命运，但我们都想法改变生活。其实生活是晨起暮落。日子就是柴米油盐。走过的路，经过的事，看过的风景，已经随着光阴渐行渐远，我们不必哀叹，也无需伤感，梦如蝉衣，心若琉璃，而遇见，本就没有值得与不值得。唯有让这寂静的文字与你我同行，将碎碎的念想打结成一串串音符，穿过空间，飞越你的耳畔，若是有心，一切尽在不言中。',
       '   我不能和你牵手雪花，但我可以和你相拥这个冬寒！些许在下一个春暖花开的季里！'
     ]
-    const key = 4;
+    // const key = 1;
     postArticleData(key, title, content).then(res => {
       if(res.data.code !== 0) {
         wx.showToast({
