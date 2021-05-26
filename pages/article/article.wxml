@@ -10,6 +10,5 @@
     <!-- <view class="btn">添加到日记</view>
     <view class="btn">分享好友</view> -->
     <text class="btn" bindtap="addToDiary">添加到日记</text>
-    <text class="btn" bindtap="toFirend">分享好友</text>
   </view>
 </scroll-view>

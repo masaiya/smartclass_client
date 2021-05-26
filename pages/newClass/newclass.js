@@ -166,7 +166,7 @@ Page({
       }
       postLongVideoHistory(app.globalData.openid, historyData).then(res => {
         if(res.data.code == 0) {
-          wx.redirectTo({
+          wx.reLaunch({
             url: '/pages/class/class',
           })
         }else {

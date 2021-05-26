@@ -204,7 +204,7 @@ Page({
           })
           console.log(res.data);
         } else {
-          wx.redirectTo({
+          wx.reLaunch({
             url: '/pages/diary/diary',
           })
         }

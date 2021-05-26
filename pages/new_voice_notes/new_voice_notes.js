@@ -166,7 +166,7 @@ Page({
       }
       postSmallVideoHistory(app.globalData.openid, historyData).then(res => {
         if(res.data.code == 0) {
-          wx.redirectTo({
+          wx.reLaunch({
             url: '/pages/audio-notes/audio-notes',
           })
         }else {

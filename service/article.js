@@ -6,14 +6,14 @@ export function getArticleData(key) {
   })
 }
 
-export function postArticleData(key, title, content) {
+export function postArticleData(data) {
   return request({
     url: `/postArticleData`,
     method: 'post',
     data: {
-      content,
-      key,
-      title
+      content: data.content,
+      key: data.key,
+      title: data.title
     },
     contentType: 'application/json',
   })
